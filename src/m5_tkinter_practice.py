@@ -41,16 +41,23 @@ def main():
 
 
     # ------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # Done: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # ------------------------------------------------------------------
+    my_entry_box = ttk.Entry(frame1)
+    my_entry_box.grid()
+
+    hello_goodbye_button = ttk.Button(frame1, text='Check for ok')
+    hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
+    hello_goodbye_button.grid()
+
 
     # ------------------------------------------------------------------
-    # TODO: 7.
+    # Done: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -73,11 +80,33 @@ def main():
     #      n = int(s)
     ####################################################################
 
+    my_entry_box2 = ttk.Entry(frame1)
+    my_entry_box2.grid()
+    button = ttk.Button(frame1, text='N Times')
+    button['command'] = lambda: n_times(my_entry_box, my_entry_box2)
+    button.grid()
+
     # ------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
 
     root.mainloop()
+
+def check_for_ok(entry_box):
+    contents = entry_box.get()
+    if contents == 'ok':
+        print('Hello')
+    else:
+        print('Goodbye')
+
+
+def n_times(box1, box2):
+    contents1 = box1.get()
+    contents2 = box2.get()
+    n = int(contents2)
+    print(contents1 * n)
+
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
