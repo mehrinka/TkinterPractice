@@ -17,7 +17,6 @@ def main():
     # ------------------------------------------------------------------
     root = tkinter.Tk()
 
-
     # ------------------------------------------------------------------
     # Done: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
@@ -39,7 +38,6 @@ def main():
     # ------------------------------------------------------------------
     say_hello_button['command'] = lambda: print('Hello')
 
-
     # ------------------------------------------------------------------
     # Done: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
@@ -54,7 +52,6 @@ def main():
     hello_goodbye_button = ttk.Button(frame1, text='Check for ok')
     hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
     hello_goodbye_button.grid()
-
 
     # ------------------------------------------------------------------
     # Done: 7.
@@ -87,10 +84,11 @@ def main():
     button.grid()
 
     # ------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # Done: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
 
     root.mainloop()
+
 
 def check_for_ok(entry_box):
     contents = entry_box.get()
